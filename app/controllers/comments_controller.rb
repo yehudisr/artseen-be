@@ -7,4 +7,10 @@ class CommentsController < ApplicationController
         @comment = Comment.create(content: params[:content], event_id: params[:event_id], user_id: params[:user_id])
         render json: @comment
     end 
+
+    def show 
+        @comment = Comment.find(params[:id])
+        render json: @comment
+    end
+
 end

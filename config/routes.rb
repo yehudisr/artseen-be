@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/events/:id', to: 'events#show'
 
   post '/login', to: 'users#login'
+  post '/event_listings', to: 'event_listings#create'
   # resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
