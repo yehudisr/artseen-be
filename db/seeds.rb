@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'rest-client'
+
 Comment.destroy_all
 EventListing.destroy_all
 Event.destroy_all
@@ -41,6 +43,32 @@ EventListing.create(user_id: 5, event_id: 1, saved: true, seen: false, booked: t
 EventListing.create(user_id: 5, event_id: 1, saved: true, seen: false, booked: true )
 EventListing.create(user_id: 5, event_id: 1, saved: true, seen: false, booked: false )
 EventListing.create(user_id: 5, event_id: 2, saved: true, seen: true, booked: false )
+
+#EVENTS
+
+# uri = URI('http://www.nyartbeat.com/list/event_searchNear?latitude=40.719130&longitude=-73.980000')
+# def events
+#     resp = RestClient.get'http://www.nyartbeat.com/list/event_searchNear?latitude=40.719130&longitude=-73.980000'
+#     JSON.parse(resp)
+# end 
+# url = 'http://www.nyartbeat.com/list/event_searchNear?latitude=40.719130&longitude=-73.980000'
+def events
+    url = 'https://api.artic.edu/api/v1/exhibitions?limit=35'
+
+    res = RestClient.get(url)
+    JSON.parse(res)
+end
+
+events["data"].each do |event|
+    Event.create(title: event["title"] , description: event["description"] , date: event["aic_start_at"] , image: event["image_url"] , link: event["web_url"], location: "Chicago" )
+end 
+
+
+
+# events.each do |event|
+#     event
+#     byebug
+# end
 
 #COMMENTS
 Comment.create(content: "Do not pass by, it does not worth your time", event_id: 1, user_id: 4)
