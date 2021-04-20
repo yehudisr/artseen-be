@@ -21,10 +21,10 @@ User.create(firstname: "Bat", lastname: "Man", email: "batman@example.com", pass
 
 
 #EVENTS
-Event.create(title:"ArTechNow", location: "New York", description:"A journey between Art and Technology", link:"blablabla")
-Event.create(title:"Once upon the Time", location: "Chicago", description:" When time, tech and Contemporary Art has merged", link:"blablabla")
-Event.create(title:"JavArtScript", location: "New York", description:" A showcase of art performance through programming", link:"blablabla")
-Event.create(title:"Python", location: "New York", description:" From your keyboard to the Jungle", link:"blablabla")
+# Event.create(title:"ArTechNow", location: "New York", description:"A journey between Art and Technology", link:"blablabla")
+# Event.create(title:"Once upon the Time", location: "Chicago", description:" When time, tech and Contemporary Art has merged", link:"blablabla")
+# Event.create(title:"JavArtScript", location: "New York", description:" A showcase of art performance through programming", link:"blablabla")
+# Event.create(title:"Python", location: "New York", description:" From your keyboard to the Jungle", link:"blablabla")
 
 #EVENT LISTINGS
 EventListing.create(user_id: 1, event_id: 1, saved: true, seen: false, booked: false )
@@ -59,8 +59,11 @@ def events
     JSON.parse(res)
 end
 
+
 events["data"].each do |event|
-    Event.create(title: event["title"] , description: event["description"] , date: event["aic_start_at"] , image: event["image_url"] , link: event["web_url"], location: "Chicago" )
+    if event["image_url"]
+        Event.create(title: event["title"] , description: event["description"] , date: event["aic_start_at"] , image: event["image_url"] , link: event["web_url"], location: "Chicago" )
+    end 
 end 
 
 
