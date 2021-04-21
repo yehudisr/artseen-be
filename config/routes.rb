@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   post '/login', to: 'users#login'
   post '/event_listings', to: 'event_listings#create'
-  patch '/event_listings', to: 'event_listings#update'
+  patch '/event_listings/:id', to: 'event_listings#update'
   
   
   # post '/users/:id/events', to: 'event_listings#create'
