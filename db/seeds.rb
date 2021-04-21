@@ -26,23 +26,6 @@ User.create(firstname: "Bat", lastname: "Man", email: "batman@example.com", pass
 # Event.create(title:"JavArtScript", location: "New York", description:" A showcase of art performance through programming", link:"blablabla")
 # Event.create(title:"Python", location: "New York", description:" From your keyboard to the Jungle", link:"blablabla")
 
-#EVENT LISTINGS
-EventListing.create(user_id: 1, event_id: 1, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 1, event_id: 2, saved: true, seen: false,booked: false )
-EventListing.create(user_id: 1, event_id: 3, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 1, event_id: 4, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 2, event_id: 1, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 2, event_id: 1, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 2, event_id: 1, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 2, event_id: 1, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 3, event_id: 1, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 3, event_id: 2, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 3, event_id: 3, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 3, event_id: 4, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 5, event_id: 1, saved: true, seen: false, booked: true )
-EventListing.create(user_id: 5, event_id: 1, saved: true, seen: false, booked: true )
-EventListing.create(user_id: 5, event_id: 1, saved: true, seen: false, booked: false )
-EventListing.create(user_id: 5, event_id: 2, saved: true, seen: true, booked: false )
 
 #EVENTS
 
@@ -65,6 +48,28 @@ events["data"].each do |event|
         Event.create(title: event["title"] , description: event["description"] , date: event["aic_start_at"] , image: event["image_url"] , link: event["web_url"], location: "Chicago" )
     end 
 end 
+
+
+
+
+#EVENT LISTINGS
+EventListing.create(user_id: 1, event_id: 1, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 1, event_id: 2, saved: true, seen: false,booked: false )
+EventListing.create(user_id: 1, event_id: 3, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 1, event_id: 4, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 2, event_id: 1, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 2, event_id: 1, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 2, event_id: 1, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 2, event_id: 1, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 3, event_id: 1, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 3, event_id: 2, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 3, event_id: 3, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 3, event_id: 4, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 5, event_id: 1, saved: true, seen: false, booked: true )
+EventListing.create(user_id: 5, event_id: 1, saved: true, seen: false, booked: true )
+EventListing.create(user_id: 5, event_id: 1, saved: true, seen: false, booked: false )
+EventListing.create(user_id: 5, event_id: 2, saved: true, seen: true, booked: false )
+
 
 
 

@@ -10,9 +10,11 @@ Rails.application.routes.draw do
 
   post '/login', to: 'users#login'
   post '/event_listings', to: 'event_listings#create'
+  patch '/event_listings', to: 'event_listings#update'
   
   
-  post '/users/:id/events', to: 'event_listings#create'
+  # post '/users/:id/events', to: 'event_listings#create'
+
 
   # resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
