@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :comments
-  resources :event_listings
+  # resources :event_listings
   # resources :events
   
   ##################USER############
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login'
   post '/event_listings', to: 'event_listings#create'
   patch '/event_listings/:id', to: 'event_listings#update'
+
+  delete '/event_listings/:id', to: 'event_listings#destroy'
   
   
   # post '/users/:id/events', to: 'event_listings#create'
