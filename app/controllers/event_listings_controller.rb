@@ -12,7 +12,8 @@ class EventListingsController < ApplicationController
     
     end
 
-    def update
+    def update 
+        
         @event_listing = EventListing.find(params[:id])
         @event_listing.update(update_params)
         render json: @event_listing
