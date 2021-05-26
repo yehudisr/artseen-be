@@ -44,8 +44,10 @@ end
 
 
 events["data"].each do |event|
-    if event["image_url"]
+    if event["image_url"] && event["description"]
         Event.create(title: event["title"] , description: event["description"] , date: event["aic_start_at"] , image: event["image_url"] , link: event["web_url"], location: "Chicago" )
+    # else
+    #     Event.create(title: event["title"] , description: event["description"] , date: event["aic_start_at"] , image: event["image_url"] , link: event["web_url"], location: "Chicago" )
     end 
 end 
 
